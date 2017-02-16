@@ -1,9 +1,30 @@
-// based on https://www.openprocessing.org/sketch/152169
-// https://creativecommons.org/licenses/by-sa/3.0/
+//Patrick Potter
+//2/16/17
+//Woodstock Wave
 
-size(400, 400);
-int x = 5;
-while(x <= 50) {
-  ellipse(200, 200, x, x);
-  x = x + 10;
+int count;
+int num = 80; //number of circles
+int r = 255;
+float arcStart= PI;
+float arcEnd = TWO_PI;
+float maxArcEnd = TWO_PI;
+float movement = 0.0;
+float speed = PI/2000; // speed of wave
+void setup()
+{
+  size(1000, 1000);
+  noFill();
+}
+void draw()
+{
+  count = 0;
+  background(14, 57, 26);
+  stroke(r);
+  while (count <= num) {
+    int i = count * 10; // amount of spaces between
+    arcEnd = map(sin(movement + (maxArcEnd / num * count)), -1, 1, arcStart, maxArcEnd);
+    arc(width/2, height/2, i, i, arcStart, arcEnd);
+    count = count + 1;
+    movement = movement + speed;
+  }
 }
