@@ -1,9 +1,8 @@
 //Patrick Potter
 //2/16/17
 //Woodstock Wave
-
 int count;
-int num = 80; //number of circles
+int num = 40; //number of circles
 int r = 255;
 float arcStart= PI;
 float arcEnd = TWO_PI;
@@ -12,7 +11,7 @@ float movement = 0.0;
 float speed = PI/2000; // speed of wave
 void setup()
 {
-  size(1000, 1000);
+  size(500, 500);
   noFill();
 }
 void draw()
